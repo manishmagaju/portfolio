@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: #0a0a0f; color: #f4f4f8; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+::selection { background: rgba(124, 131, 255, 0.4); }
+:focus-visible { outline: 2px solid #7c83ff; outline-offset: 3px; border-radius: 6px; }
+
+@layer components {
+  .glass { @apply border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.35)]; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition duration-200 active:scale-[0.97]; }
+  .btn-primary { @apply btn bg-gradient-to-r from-accent to-violet text-ink hover:shadow-[0_0_28px_rgba(124,131,255,0.5)]; }
+  .btn-ghost { @apply btn border border-white/15 text-white hover:bg-white/10; }
+  .gradient-text { @apply bg-gradient-to-r from-white via-white to-accent bg-clip-text text-transparent; }
+}
